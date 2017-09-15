@@ -3,6 +3,7 @@
 namespace WebTorque\Deployment;
 
 use function Deployer\ask;
+use const PHP_EOL;
 
 class Environment
 {
@@ -101,6 +102,7 @@ define('SS_ENVIRONMENT_TYPE', '{$config['envtype']}');
 
 define('SS_DATABASE_USERNAME', '{$config['dbuser']}');
 define('SS_DATABASE_PASSWORD', '{$config['dbpassword']}');
+define('SS_DATABASE_NAME', '{$config['dbname']}');
 define('SS_DATABASE_CLASS', '{$config['dbtype']}');
 ENV;
 
@@ -113,6 +115,9 @@ ENV;
         if (!empty($config['dbport'])) {
             $envFile .= "define('SS_DATABASE_PORT', '{$config['dbport']}');\n";
         }
+
+        // add a newline to make more readable
+        $envFile .= PHP_EOL;
 
         // file mapping for dev/build
         // normal path - don't change as this we get picked up by parser for other scripts

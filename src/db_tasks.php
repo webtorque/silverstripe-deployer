@@ -2,11 +2,7 @@
 namespace Deployer;
 use \WebTorque\Deployment\Environment;
 
-get('db_admin_user', function() {
-   return ask('What is the admin user for the database? (default root)', 'root');
-});
-
-get('db_admin_password', function() {
+set('db_admin_password', function() {
    return ask('What is the admin password for the database?');
 });
 
