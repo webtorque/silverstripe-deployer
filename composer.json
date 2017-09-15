@@ -1,0 +1,7 @@
+{
+    "name": "webtorque/silverstripe-deployer",
+    "description": "Deployer scripts for SilverStripe",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
