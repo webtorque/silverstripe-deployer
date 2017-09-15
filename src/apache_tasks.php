@@ -12,7 +12,7 @@ task(
                 if (($version['major'] === 2 && $version['minor'] === 4) || $version['minor'] === 2) {
                     //get config
                     $config = file_get_contents(
-                        "deployer/templates/apache.{$version['major']}.{$version['minor']}.conf"
+                        __DIR__ . "/templates/apache.{$version['major']}.{$version['minor']}.conf"
                     );
 
                     //get some user input

@@ -108,7 +108,7 @@ ENV;
 
         // check for host
         if (!empty($config['dbhost'])) {
-            $envFile .= "define('SS_DATABASE_HOST', '{$config['dbhost']}');\n";
+            $envFile .= "define('SS_DATABASE_SERVER', '{$config['dbhost']}');\n";
         }
 
         // check for port
@@ -157,7 +157,7 @@ ENV;
         }
         unset($matches);
 
-        preg_match("/define\\('SS_DATABASE_HOST', '(.*?)'\\)/", $env, $matches);
+        preg_match("/define\\('SS_DATABASE_SERVER', '(.*?)'\\)/", $env, $matches);
         if ($matches) {
             $credentials['host'] = $matches[1];
         }
